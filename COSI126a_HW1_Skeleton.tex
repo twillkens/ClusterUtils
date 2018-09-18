@@ -1,0 +1,117 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym,amsfonts,amssymb,amsthm,amsmath}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\usepackage{tabu}
+\usepackage{graphicx}
+\usepackage [english]{babel}
+\graphicspath{ {.} }
+\setlength{\parindent}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.8in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{18pt}
+
+
+
+
+
+\title{COSI 126A: Homework 1 - Skeleton}
+\date{}
+\begin{document}
+
+\maketitle
+
+\vspace{0.5in}
+
+
+\subsection*{Substitution}
+For DBSCAN, please use the dataset 'rockets.csv' instead of 'anthill.csv'. This has more clearly defined shapes, as well introducing noise points. For Kernel/Spectral clustering, please use 'eye\_dense.csv' instead of 'eye.csv'.
+
+\subsection*{ClusterUtils}
+
+Provided for you is the basic framework for HW1. Your responsibility is to implement the execution of algorithms in the following:
+\begin{enumerate}
+	\item KMeans.py
+	\item DBScan.py
+	\item ExternalValidator.py
+	\item InternalValidator.py
+	\item Spectral.py
+	\item KernelKM.py
+\end{enumerate}
+
+There are two additional utility classes, SuperCluster.py, and ClusterPlotter.py, that are completed for you. You may benefit from taking a look at the superclass SuperCluster.py to better understand the structure, provided methods, and parameters. 
+
+Implemented for you are methods for reading data from .csv files, initializing the fitting of data, and saving processed data. The easiest way to complete the assignment is with the following pattern:
+
+\begin{lstlisting}
+km = KMeans(init='random', n_clusters=3, csv_path='three_globs.csv')
+\end{lstlisting}
+
+This initializes the KMeans object with the given parameters. There are additional parameters that can be set that you can find in the code.
+
+\begin{lstlisting}
+km.fit_from_csv()
+\end{lstlisting}
+
+This first reads data from the .csv, converting it to a pandas DataFrame, which is attached to the object as km.DF. 
+An np.darray is attached to object as km.X
+It then executes your algorithm, updating the samples in DF and X with your labels (and centroids, if any).
+
+\begin{lstlisting}
+df = km.fit_predict_from_csv()
+\end{lstlisting}
+
+This does the same as above, but also returns a pandas DataFrame.
+
+\begin{lstlisting}
+km.show_plot()
+\end{lstlisting}
+
+This creates and displays a matplot plot of your processed data. Centroids are displayed and points are colored by cluster. It reduces high dimensions into 2D space if needed using PCA.
+
+\begin{lstlisting}
+km.save_csv()
+\end{lstlisting}
+
+This saves km.DF to a .csv file in the directory of program execution. See 'sample\_driver.py' for more example usage.
+
+\subsection*{Internal Validation}
+Internal validation requires computing a list of clustering results. This can be plotted in 3D for CVNN, and with a line plot for the Silhouette Index. This class has its own utility methods for saving .csv results and plots. You may benefit from practicing with 'well\_separated.csv' to test your code for internal validation.
+
+\subsection*{Packaging}
+Please include your name and email in 'setup.py'. When you are finished, you may install and use the package in your system by running:
+\begin{lstlisting}
+python setup.py install
+\end{lstlisting}
+
+\subsection*{Issues/GitHub}
+If you discover any issues with the code, please reach out to twillkens@brandeis.edu. The codebase will be maintained at https://github.com/twillkens/ClusterUtils. Updates will be posted if necessary.
+
+
+\end{document}
