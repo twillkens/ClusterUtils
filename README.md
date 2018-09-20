@@ -8,17 +8,18 @@ Github repository: https://github.com/twillkens/ClusterUtils
 
 Additionally, there are a few new "minified" datasets included in the GitHub repo. You may find these useful when first implementing your algorithms, as the amount of data is small enough to trace what is happening step-by-step.
 
-1. three_globs_mini.csv (for KMeans)
-2. squares_mini.csv (for DBSCAN)
-3. eye_mini.csv (for Kernel/Spectral)
+They can be found at: https://github.com/twillkens/ClusterUtils/tree/master/Mini\_Datasets
+1. three\_globs\_mini.csv (for KMeans)
+2. squares\_mini.csv (for DBSCAN)
+3. eye\_mini.csv (for Kernel/Spectral)
 
 
-UPDATES
+## UPDATES
 
 ---------
-File: sample_driver.py
-Issue: KMeans cluster numbers to search for not being updated in loop.
-Fix: Lines 23-26, change to:
+File: sample\_driver.py  
+Issue: KMeans cluster numbers to search for not being updated in loop.  
+Fix: Lines 23-26, change to:  
 
 ```python
 for i in range(2, 10):
@@ -30,15 +31,15 @@ for i in range(2, 10):
 ```
 
 ---------
-File: KMeans.py
-Issue: Parameter missing for choosing Lloyd's or Hartigan's algorithm.
-Fix #1: Line 9, change to:
+File: KMeans.py  
+Issue: Parameter missing for choosing Lloyd's or Hartigan's algorithm.  
+Fix #1: Line 9, change to:  
 
 ```python
 def k_means(X, n_clusters=3, init='random', algorithm='lloyds', n_init=1, max_iter=300, verbose=False):
 ```
 
-Fix #2: Line 60-64, change to:
+Fix #2: Line 60-64, change to:  
 
 ```python
     def __init__(self, n_clusters=3, init='random', algorithm='lloyds', n_init=1, max_iter=300,
@@ -50,9 +51,9 @@ Fix #2: Line 60-64, change to:
 ```
 
 ---------
-File: ClusterPlotter.py
-Issue: Silhouette Index does not plot on all platforms
-Fix: Method 'def \_plot\_silhouette\_', line 79, change to:
+File: ClusterPlotter.py  
+Issue: Silhouette Index does not plot on all platforms  
+Fix: Method 'def \_plot\_silhouette\_', line 79, change to:  
 
 ```python
 def _plot_silhouette_(silhouette_table, save=False, n='silhouette_plot'):
@@ -66,9 +67,9 @@ def _plot_silhouette_(silhouette_table, save=False, n='silhouette_plot'):
 ```
 
 ---------
-File: ExternalValidator.py
-Issue: Centroid rows from KMeans not being dropped before calculating scores
-Fix: Lines 43-45, change to:
+File: ExternalValidator.py  
+Issue: Centroid rows from KMeans not being dropped before calculating scores  
+Fix: Lines 43-45, change to:  
 
 ```python
     def __init__(self, df = None, true_labels = None, pred_labels = None):
