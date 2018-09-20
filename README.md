@@ -8,7 +8,7 @@ Github repository: https://github.com/twillkens/ClusterUtils
 
 Additionally, there are a few new "minified" datasets included in the GitHub repo. You may find these useful when first implementing your algorithms, as the amount of data is small enough to trace what is happening step-by-step.
 
-They can be found at: https://github.com/twillkens/ClusterUtils/tree/master/Mini\_Datasets
+They can be found at: https://github.com/twillkens/ClusterUtils/tree/master/Mini_Datasets
 1. three\_globs\_mini.csv (for KMeans)
 2. squares\_mini.csv (for DBSCAN)
 3. eye\_mini.csv (for Kernel/Spectral)
