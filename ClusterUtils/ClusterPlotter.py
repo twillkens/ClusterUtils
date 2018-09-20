@@ -76,12 +76,15 @@ def _plot_kmeans_(X = None, centroids=None, labels=None, df=None,
             ax.plot(group[0], group[1], marker='o', linestyle='', ms=2, zorder=0)
     execute_plot(n, save)
 
+# IMPORTANT -- Update to work on different platforms
 def _plot_silhouette_(silhouette_table, save=False, n='silhouette_plot'):
-    silhouette_table.plot.line(x='CLUSTERS', y='SILHOUETTE_IDX')
-    if save:
-        filename = n + '_' + str(round(time.time())) + '.png'
-        plt.savefig(filename)
-        print('Plot saved as ' + filename)
+    fig, ax = plt.subplots()
+    ax.margins(0.05)
+    ax.set_xlabel('Clusters')
+    ax.set_ylabel('Silhouette Index')
+    plt.plot(silhouette_table['CLUSTERS'], silhouette_table['SILHOUETTE_IDX'], label='Silhouette Index')
+    plt.legend()
+    execute_plot(n, save)
 
 def _plot_cvnn_(cvnn_table, save=False, n='cvnn_table'):
     cnn_table = cvnn_table.copy()

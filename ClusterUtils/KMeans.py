@@ -6,7 +6,7 @@ from ClusterUtils.SuperCluster import SuperCluster
 from ClusterUtils.ClusterPlotter import _plot_kmeans_
 
 
-def k_means(X, n_clusters=3, init='random', n_init=1, max_iter=300, verbose=False):
+def k_means(X, n_clusters=3, init='random', algorithm='lloyds', n_init=1, max_iter=300, verbose=False):
 
     # Implement.
 
@@ -36,8 +36,10 @@ class KMeans(SuperCluster):
     n_clusters : int, optional, default: 8
         The number of clusters to form as well as the number of
         centroids to generate.
-    init : {'random', 'k-means++', 'global', or 'hartigans'}
+    init : {'random', 'k-means++', 'global'}
         Method for initialization, defaults to 'random'.
+    algorithm : {'lloyds', 'hartigans'}
+        Method for determing algorithm, defaults to 'lloyds'.
     n_init : int, default: 1
         Number of time the k-means algorithm will be run with different
         centroid seeds. The final results will be the best output of
@@ -57,10 +59,11 @@ class KMeans(SuperCluster):
         Optional log level
     """
 
-    def __init__(self, n_clusters=3, init='random', n_init=1, max_iter=300,
+    def __init__(self, n_clusters=3, init='random', algorithm='lloyds', n_init=1, max_iter=300,
                  csv_path=None, keep_dataframe=True, keep_X=True, verbose=False):
-        self.n_clusters=n_clusters
+        self.n_clusters = n_clusters
         self.init = init
+        self.algorithm = algorithm
         self.n_init = n_init
         self.max_iter = max_iter
         self.csv_path = csv_path

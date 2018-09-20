@@ -22,7 +22,6 @@ def dbscan(X, eps=1, min_points=10, verbose=False):
 class DBScan(SuperCluster):
     """
     Perform DBSCAN clustering from vector array.
-    Read more in the :ref:`User Guide <dbscan>`.
     Parameters
     ----------
     eps : float, optional
