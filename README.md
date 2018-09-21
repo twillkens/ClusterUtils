@@ -1,10 +1,11 @@
 # ClusterUtils
 
+## Update
 The following are a few important updates to the skeleton for Homework 1.
 
-You should either (a) Merge the latest changes from GitHub or (b) Implement the changes detailed below under "Updates."
-
-Github repository: https://github.com/twillkens/ClusterUtils
+You should either:
+* Merge the latest changes from GitHub (preferred), or
+* Implement the changes detailed below under "Changes" into your skeleton.
 
 Additionally, there are a few new "minified" datasets included in the GitHub repo. You may find these useful when first implementing your algorithms, as the amount of data is small enough to trace what is happening step-by-step.
 
@@ -13,8 +14,12 @@ They can be found at: https://github.com/twillkens/ClusterUtils/tree/master/Mini
 2. squares\_mini.csv (for DBSCAN)
 3. eye\_mini.csv (for Kernel/Spectral)
 
+## Misc. Notes
+1. It is recommended to implement a simple random KMeans before implementing the Validators. This way, you have useful, real data to work with.
+2. Implementation of KernelKM.py and Spectral.py now are both bonus questions, worth 5 points each. I hope you attempt them, however, as they are extremely interesting.
 
-## UPDATES
+
+## Changes
 
 ---------
 File: sample\_driver.py  
