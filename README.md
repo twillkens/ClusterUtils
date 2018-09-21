@@ -7,16 +7,28 @@ You should either:
 * Merge the latest changes from GitHub (preferred), or
 * Implement the changes detailed below under "Changes" into your skeleton.
 
-Additionally, there are a few new "minified" datasets included in the GitHub repo. You may find these useful when first implementing your algorithms, as the amount of data is small enough to trace what is happening step-by-step.
+## New Datasets
+
+There are a few new "minified" datasets included in the GitHub repo. You may find these useful when first implementing your algorithms, as the amount of data is small enough to trace what is happening step-by-step.
 
 They can be found at: https://github.com/twillkens/ClusterUtils/tree/master/Mini_Datasets
 1. three\_globs\_mini.csv (for KMeans)
 2. squares\_mini.csv (for DBSCAN)
 3. eye\_mini.csv (for Kernel/Spectral)
 
+Additionally, there are extra datasets to try out once your code is more mature. These include more challenging cases.
+
+They can be found at: https://github.com/twillkens/ClusterUtils/tree/master/Extra_Datasets
+1. iris.csv (classic dataset with three classes in four dimensions, 150 samples)
+2. globs\_large.csv (larger version of three\_globs, 1040 samples)
+3. globs\_huge.csv (2081 samples, overlapping data)
+4. fifteen\_clusters (fifteen clusters, 5000 samples)
+5. 32\_dim\_16\_clusters.csv (32 dimensions, 16 clusters, and 1024 samples)
+6. spiral.csv (312 samples, not linearally separable)
+
 ## Misc. Notes
 1. It is recommended to implement a simple random KMeans before implementing the Validators. This way, you have useful, real data to work with.
-2. Implementation of KernelKM.py and Spectral.py now are both bonus questions, worth 5 points each. I hope you attempt them, however, as they are extremely interesting.
+2. Implementation of KernelKM.py and Spectral.py now are both bonus questions, worth 5 points each. It is recommended to attempt them, however, as they are very interesting.
 
 
 ## Changes
