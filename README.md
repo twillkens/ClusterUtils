@@ -7,7 +7,7 @@ You should either:
 * Merge the latest changes from GitHub (preferred), or
 * Implement the changes detailed below under "Changes #2" into your skeleton.
 
-## Misc. Notes
+## Notes
 1. Your implementation of Hartigan's should support all three initialization options. E.g.,
 ```python
 km = KMeans(n_clusters=3, init='random', algorithm='hartigans', csv_path='three_globs.csv')
@@ -20,7 +20,7 @@ km = KMeans(n_clusters=3, init='global', algorithm='hartigans', csv_path='three_
 5. Please use log base 2 (e.g., `np.log2(x)`) for Normalized Mutual Information.
 6. If you implement `KernelKM.py` or `Spectral.py`, you must modify the class to add your own input parameters.
 7. The expected table formats to return for `InternalValidator.py` can be found in `Sample_Results`.
-8. It is useful for us if you include a file demonstrating how your code might be used, along the lines of sample\_driver.py. Include comments, parameters that worked well, and explanations as needed.
+8. It is helpful for us if you include a file demonstrating how your code might be used, along the lines of `sample_driver.py`. Include comments, parameters that worked well, and explanations as needed.
 
 ## Changes #2
 
