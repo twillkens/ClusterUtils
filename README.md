@@ -8,7 +8,7 @@ You should either:
 * Implement the changes detailed below under "Changes #2" into your skeleton.
 
 ## Misc. Notes
-1. Your implementation of Hartigans should support all three initialization options. E.g.,
+1. Your implementation of Hartigan's should support all three initialization options. E.g.,
 ```python
 km = KMeans(n_clusters=3, init='random', algorithm='hartigans', csv_path='three_globs.csv')
 km = KMeans(n_clusters=3, init='k-means++', algorithm='hartigans', csv_path='three_globs.csv')
@@ -16,10 +16,11 @@ km = KMeans(n_clusters=3, init='global', algorithm='hartigans', csv_path='three_
 ```
 2. Ensure that your algorithms are reasonably scalable. (How do they perform on `fifteen_clusters.csv`?)
 3. Ensure that your InternalValidator and ExternalValidator methods return meaningful results. Run on datasets other than `image_segmentation.csv`.
-4. Please do not delete `__init.py__`. Make sure to include your name and email in `setup.py`.
+4. Please do not delete `__init.py__`. Make sure to include your name and email in `setup.py`. Ensure that your package can be installed and used on your system by running `python setup.py install`, and testing in a different directory.
 5. Please use log base 2 (e.g., `np.log2(x)`) for Normalized Mutual Information.
 6. If you implement `KernelKM.py` or `Spectral.py`, you must modify the class to add your own input parameters.
-7. The expected table formats to return for `InternalValidator.py` can be found in `Sample_Results`
+7. The expected table formats to return for `InternalValidator.py` can be found in `Sample_Results`.
+8. It is useful for us if you include a file demonstrating how your code might be used, along the lines of sample\_driver.py. Include comments, parameters that worked well, and explanations as needed.
 
 ## Changes #2
 
