@@ -1,5 +1,57 @@
 # ClusterUtils
 
+## Update #2
+The following are a couple updates to the skeleton for Homework 1.
+
+You should either:
+* Merge the latest changes from GitHub (preferred), or
+* Implement the changes detailed below under "Changes #2" into your skeleton.
+
+## Misc. Notes
+1. Your implementation of Hartigans should support all three initialization options. E.g.,
+```python
+km = KMeans(n_clusters=3, init='random', algorithm='hartigans', csv_path='three_globs.csv')
+km = KMeans(n_clusters=3, init='k-means++', algorithm='hartigans', csv_path='three_globs.csv')
+km = KMeans(n_clusters=3, init='global', algorithm='hartigans', csv_path='three_globs.csv')
+```
+2. Ensure that your algorithms are reasonably scalable. (How do they perform on `fifteen_clusters.csv`?)
+3. Ensure that your InternalValidator and ExternalValidator methods return meaningful results. Run on datasets other than `image_segmentation.csv`.
+4. Please do not delete `__init.py__`. Make sure to include your name and email in `setup.py`.
+5. Please use log base 2 (e.g., `np.log2(x)`) for Normalized Mutual Information.
+6. If you implement `KernelKM.py` or `Spectral.py`, you must modify the class to add your own input parameters.
+7. The expected table formats to return for `InternalValidator.py` can be found in `Sample_Results`
+
+## Changes #2
+
+---------
+File: KMeans.py  
+Issue: Algorithm parameter not passed to method.  
+Fix: Lines 79-81, change to:  
+
+```python
+        self.labels, self.centroids, self.inertia = \
+            k_means(X, n_clusters=self.n_clusters, init=self.init, algorithm=self.algorithm,
+                    n_init=self.n_init, max_iter=self.max_iter, verbose=self.verbose)
+```
+
+---------
+File: InternalValidator.py  
+Issue: Centroids not stripped before processing  
+Fix: Lines 56-59, change to:  
+
+```python
+    def __init__(self, datasets, cluster_nums, k_vals=[1, 5, 10, 20]):
+        self.datasets = list(map(lambda df : df.drop('CENTROID', axis=0), datasets))
+        self.cluster_nums = cluster_nums
+        self.k_vals = k_vals
+```
+---------
+
+
+
+
+
+
 ## Update
 The following are a few important updates to the skeleton for Homework 1.
 

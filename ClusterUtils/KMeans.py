@@ -77,7 +77,7 @@ class KMeans(SuperCluster):
             self.X = X
         start_time = time.time()
         self.labels, self.centroids, self.inertia = \
-            k_means(X, n_clusters=self.n_clusters, init=self.init,
+            k_means(X, n_clusters=self.n_clusters, init=self.init, algorithm=self.algorithm,
                     n_init=self.n_init, max_iter=self.max_iter, verbose=self.verbose)
         print(self.init + " k-means finished in  %s seconds" % (time.time() - start_time))
         return self

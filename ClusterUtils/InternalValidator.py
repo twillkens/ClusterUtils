@@ -29,7 +29,7 @@ def tabulate_cvnn(datasets, cluster_nums, k_vals):
     # in each of the datasets, e.g.,
     # datasets = [np.darray, np.darray, np.darray]
     # cluster_nums = [2, 3, 4]
-    
+
     # Return a pandas DataFrame corresponding to the results.
 
     return None
@@ -54,7 +54,7 @@ class InternalValidator:
         """
 
     def __init__(self, datasets, cluster_nums, k_vals=[1, 5, 10, 20]):
-        self.datasets = datasets
+        self.datasets = list(map(lambda df : df.drop('CENTROID', axis=0), datasets))
         self.cluster_nums = cluster_nums
         self.k_vals = k_vals
 
