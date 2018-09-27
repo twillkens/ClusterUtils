@@ -15,8 +15,8 @@ km = KMeans(n_clusters=3, init='k-means++', algorithm='hartigans', csv_path='thr
 km = KMeans(n_clusters=3, init='global', algorithm='hartigans', csv_path='three_globs.csv')
 ```
 2. Ensure that your algorithms are reasonably scalable. (How do they perform on `fifteen_clusters.csv`?)
-3. Ensure that your InternalValidator and ExternalValidator methods return meaningful results. Run on datasets other than `image_segmentation.csv`.
-4. Please do not delete `__init.py__`. Make sure to include your name and email in `setup.py`. Ensure that your package can be installed and used on your system by running `python setup.py install`, and testing in a different directory.
+3. Ensure that your `InternalValidator.py` and `ExternalValidator.py` methods return meaningful results. Run on datasets other than `image_segmentation.csv`.
+4. Please do not delete `__init.py__`. Make sure to include your name and email in `setup.py`. Ensure that your package can be installed and used on your system by running `$ python setup.py install`, and testing in a different directory.
 5. Please use log base 2 (e.g., `np.log2(x)`) for Normalized Mutual Information.
 6. If you implement `KernelKM.py` or `Spectral.py`, you must modify the class to add your own input parameters.
 7. The expected table formats to return for `InternalValidator.py` can be found in `Sample_Results`.
