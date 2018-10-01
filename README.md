@@ -5,7 +5,7 @@ The following are a few small updates for Homework 1, which supports use of the 
 
 ---------
 File: ExternalValidator.py  
-Issue: Validator breaks on DBSCAN.  
+Issue: Validator breaks for DBSCAN results.  
 Fix: Lines 44-45, change to:  
 
 ```python
@@ -15,7 +15,7 @@ Fix: Lines 44-45, change to:
 
 ---------
 File: InternalValidator.py  
-Issue: Validator breaks on DBSCAN.  
+Issue: Validator breaks for DBSCAN results.  
 Fix: Lines 57-60, change to:  
 
 ```python
