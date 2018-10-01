@@ -1,5 +1,43 @@
 # ClusterUtils
 
+## Update #3
+The following are a few small updates for Homework 1, which supports use of the validators on DBSCAN results.
+
+---------
+File: ExternalValidator.py  
+Issue: Validator breaks on DBSCAN.  
+Fix: Lines 44-45, change to:  
+
+```python
+        if 'CENTROID' in df.index:
+            df = df.drop('CENTROID', axis=0)
+```
+
+---------
+File: InternalValidator.py  
+Issue: Validator breaks on DBSCAN.  
+Fix: Lines 57-60, change to:  
+
+```python
+        if 'CENTROID' in datasets[0].index:
+            self.datasets = list(map(lambda df : df.drop('CENTROID', axis=0), datasets))
+        else:
+            self.datasets = datasets
+```
+---------
+File: InternalValidator.py  
+Issue: CVNN table saved instead of silhouette.  
+Fix: Lines 83-84, change to:  
+
+```python
+    def save_silhouette_plot(self, name='silhouette_plot'):
+        _plot_silhouette_(self.silhouette_table, save=True, n=name)
+```
+---------
+
+
+
+
 ## Update #2
 The following are a couple updates to the skeleton for Homework 1.
 

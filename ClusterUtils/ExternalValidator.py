@@ -42,7 +42,7 @@ class ExternalValidator:
 
     def __init__(self, df = None, true_labels = None, pred_labels = None):
         if 'CENTROID' in df.index:
-            df = df.drop('CENTROID', axis=0)  # IMPORTANT -- Drop centroid rows before processing
+            df = df.drop('CENTROID', axis=0)
         self.DF = df
         self.true_labels = true_labels
         self.pred_labels = pred_labels

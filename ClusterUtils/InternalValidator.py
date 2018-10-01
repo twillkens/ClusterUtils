@@ -81,7 +81,7 @@ class InternalValidator:
         _plot_silhouette_(self.silhouette_table)
 
     def save_silhouette_plot(self, name='silhouette_plot'):
-        _plot_silhouette_(self.cvnn_table, save=True, n=name)
+        _plot_silhouette_(self.silhouette_table, save=True, n=name)
 
     def save_csv(self, cvnn=False, silhouette=False, name='internal_validator'):
         if cvnn is False and silhouette is False:
