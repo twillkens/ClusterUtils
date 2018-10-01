@@ -1,7 +1,7 @@
 # ClusterUtils
 
 ## Update #3
-The following are a few small updates for Homework 1, which supports use of the validators on DBSCAN results.
+The following are a few small updates for Homework 1, to support use of the validators on DBSCAN results.
 
 ---------
 File: ExternalValidator.py  
